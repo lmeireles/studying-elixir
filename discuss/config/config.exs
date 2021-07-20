@@ -33,7 +33,8 @@ config :ueberauth, Ueberauth,
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: "fdc659c91bd24a29f0ba",
-  client_secret: System.get_env("ELIXIR_STUDY_GIT_SECRET")
+  client_secret: "28d05a46f1fc9170ef752059f44bf6af76a17091"
+#  client_secret: System.get_env("ELIXIR_STUDY_GIT_SECRET")
 
 
 # Import environment specific config. This must remain at the bottom

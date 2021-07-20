@@ -16,12 +16,17 @@
         <td style="width: 100%" class="collection-item">
             <%= topic.title %>
         </td>
-        <td>
-            <%= link "Edit", to: Routes.topic_path(@conn, :edit, topic), class: "button button-clear" %>
-        </td>
-        <td>
-            <%= link "Delete", to: Routes.topic_path(@conn, :delete, topic), method: :delete, class: "button button-clear" %>
-        </td>
+        <%= if @conn.assigns.user.id == topic.user_id do %>
+            <td>
+                <%= link "Edit", to: Routes.topic_path(@conn, :edit, topic), class: "button button-clear" %>
+            </td>
+            <td>
+                <%= link "Delete", to: Routes.topic_path(@conn, :delete, topic), method: :delete, class: "button button-clear" %>
+            </td>
+        <% else %>
+            <td></td>
+            <td></td>
+        <% end %>
     </tr>
     <% end %>
     </tbody>
