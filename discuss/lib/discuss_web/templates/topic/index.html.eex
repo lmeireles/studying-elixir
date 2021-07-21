@@ -14,7 +14,7 @@
     <%= for topic <- @topics do %>
     <tr>
         <td style="width: 100%" class="collection-item">
-            <%= topic.title %>
+            <%= link topic.title, to: Routes.topic_path(@conn, :show, topic) %>
         </td>
         <%= if @conn.assigns.user.id == topic.user_id do %>
             <td>

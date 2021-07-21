@@ -1,0 +1,13 @@
+<h3><%= @topic.title %></h3>
+
+<div>
+    <textarea id="comment-field" cols="30" rows="10"></textarea>
+    <button id="comment-button" class="button">Add Comment</button>
+    <table id="comments-list"></table>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        window.createSocket(<%= @topic.id %>)
+    })
+</script>
